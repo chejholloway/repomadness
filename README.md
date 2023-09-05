@@ -1,8 +1,7 @@
 # Front End Interview Project
 
 Hello! If you're reading this, that means you've passed our initial phone screen. Congrats! We're excited to get to know
-you more and see if you'd be a good fit for Real.
-
+you more and see if you'd be a good fit.
 We would like you to implement the following project to help us assess your real-world programming knowledge.
 
 ## The Project
@@ -59,15 +58,3 @@ you made, and how you would extend this if you had more time. Please include thi
 
 Please feel free to reach out to the recruiter if you have any questions or if anything is unclear. We're excited to see
 what you come up with! Good luck!
-
-## License
-
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br/>
-
-## Submitting your solution
-
-Please push your changes to the `main branch` of this repository. You can push one or more commits.
-
-<br/>
-
-Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/af9736c1-2614-4811-a677-cfe9d9696340" target="_blank">this screen</a>.
