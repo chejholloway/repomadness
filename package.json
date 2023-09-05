@@ -1,0 +1,97 @@
+{
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@heroicons/react": "^2.0.18",
+    "@material-tailwind/react": "^2.1.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^20.5.6",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "^5.3.3",
+    "msw": "^1.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
+    "twin.macro": "^3.4.0",
+    "typescript": "^5.2.2",
+    "uuid": "^9.0.0",
+    "web-vitals": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.22.11",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^6.1.2",
+    "@types/jest": "^29.5.4",
+    "@types/react": "^18.2.21",
+    "@types/redux-mock-store": "^1.0.3",
+    "@types/testing-library__jest-dom": "^6.0.0",
+    "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "jest-dom": "^4.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.2",
+    "redux-mock-store": "^1.5.4",
+    "tailwindcss": "^3.3.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test --watchAll=false",
+      "pre-push": "npm test --watchAll=false"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint src/**/*.{ts,tsx} --fix --quiet"
+    ],
+    "*.{json,js,ts,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "name": "cra-template",
+  "overrides": {
+    "babel-plugin-lodash": {
+      "@babel/types": "~7.20.0"
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "docs:serve": "cd docs && npx live-server",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "lint:staged": "lint-staged",
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "version": "0.1.0"
+}

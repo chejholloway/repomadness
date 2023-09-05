@@ -1,0 +1,55 @@
+# OrgsList
+
+OrgsList component displays a list of organizations associated with a developer.
+
+```jsx
+interface OrgsListProps {
+  developer: Developer | undefined;
+  org: Org[] | undefined;
+}
+
+const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
+  return (
+    <div className="text-gray-700">
+      <h3 className="text-center">
+        {/* Display title */}
+        <Title className="font-normal">Organizations</Title>
+      </h3>
+      {org ? (
+        org.map((org) => (
+          <div key={org.id}>
+            {/* Create a link to the organization's repositories */}
+            <Link to={org.repos_url}>
+              <Card className="m-2">
+                <List>
+                  <ListItem>
+                    <ListItemPrefix>
+                      {/* Display organization avatar */}
+                      <Avatar
+                        variant="circular"
+                        alt={org?.login}
+                        src={org?.avatar_url}
+                      />
+                    </ListItemPrefix>
+                    <Typography
+                      variant="small"
+                      color="gray"
+                      className="font-normal"
+                    >
+                      {/* Display organization login */}
+                      {org.login}
+                    </Typography>
+                  </ListItem>
+                </List>
+              </Card>
+            </Link>
+          </div>
+        ))
+      ) : (
+        <p>No organizations available.</p>
+      )}
+    </div>
+  );
+};
+
+export default OrgsList;

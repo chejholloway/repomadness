@@ -1,0 +1,53 @@
+# Developer Detail Page
+
+This component represents the page displaying detailed information about a GitHub developer.
+
+```jsx
+/**
+ * Represents the detailed page of a GitHub developer.
+ * @component
+ */
+const DeveloperDetailPage: React.FC = () => {
+  const { username } = useParams();
+  const { data: developer } = useGetDeveloperDetailsQuery(username);
+  const { data: repos } = useGetDeveloperReposQuery(username);
+  const { data: orgs } = useGetDeveloperOrgsQuery(username);
+  const { data: followers } = useGetDeveloperFollowersQuery(username);
+
+  if (!developer || !repos || !orgs || !followers) {
+    return <Spinner data-testid="spinner" />;
+  }
+  const fiveFollowers = selectRandomFollowers(followers, 6);
+
+  return (
+    <>
+      <Navbar />
+      <Main>
+        <WhiteContainer className="animate-slide-in">
+          <LayOutGrid>
+            <Column className="divide-y divide-solid">
+              <Link to={`${process.env.REACT_APP_GITHUB_URL}/${developer.login}`}>
+                <img
+                  className={`w-full mx-auto`}
+                  src={developer.avatar_url}
+                  alt="Avatar"
+                />
+              </Link>
+              <GrayText>
+                <FollowersList followers={fiveFollowers} />
+              </GrayText>
+              <GrayText>
+                <OrgsList developer={developer} org={orgs} />
+              </GrayText>
+            </Column>
+            <Column>
+              <ReposList developer={developer} repos={repos} />
+            </Column>
+          </LayOutGrid>
+        </WhiteContainer>
+      </Main>
+    </>
+  );
+};
+
+export default DeveloperDetailPage;

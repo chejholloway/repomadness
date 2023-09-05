@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrgsList> should render component 1`] = `
+<div>
+  <div
+    class="text-gray-700"
+  >
+    <h1
+      class="font-normal text-center css-qhut37"
+    >
+      Organizations
+    </h1>
+    <div />
+    <div />
+  </div>
+</div>
+`;
